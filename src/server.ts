@@ -1,5 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import fetch from 'node-fetch'
 import {filterImageFromURL, deleteLocalFiles} from './util/util';
 
 (async () => {
@@ -32,10 +33,13 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
     try {
       // 1. validate the image_url query
       const imageUrl: string = req.query.image_url as string;
-      if (!imageUrl) {throw Error();}
+      if (!imageUrl) {
+        throw Error();
+      }
       const fetchData = await fetch(imageUrl.toString(), { method: 'GET' });
-      if(fetchData.status < 200 && fetchData.status >= 300) {throw Error();}
-
+      if(fetchData.status !== 200) {
+        throw Error();
+      }
       // 2. call filterImageFromURL(image_url) to filter the image
       const imagePath: string = await filterImageFromURL(imageUrl);
 
@@ -43,10 +47,12 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
       res.sendFile(imagePath);
 
       // 4. deletes any files on the server on finish of the response
-      setTimeout(() => {deleteLocalFiles([imagePath]);}, 5000);
+      setTimeout(() => {
+        deleteLocalFiles([imagePath]);
+      }, 5000);
 
     } catch (error) {
-      res.status(400).send({ 'msg': "URL image is invalid!"});
+      res.status(400).send({"msg": error.toString()});
     }
   });
   //! END @TODO1
