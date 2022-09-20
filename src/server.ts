@@ -40,6 +40,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
       if(fetchData.status !== 200) {
         throw Error();
       }
+      console.log(fetchData)
       // 2. call filterImageFromURL(image_url) to filter the image
       const imagePath: string = await filterImageFromURL(imageUrl);
 
@@ -52,7 +53,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
       }, 5000);
 
     } catch (error) {
-      res.status(400).send({"msg": error.toString()});
+      res.status(500).send({"msg": error.toString()});
     }
   });
   //! END @TODO1

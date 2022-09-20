@@ -29,8 +29,9 @@
   },
   "dependencies": {
     "@types/node-fetch": "^2.6.1",
+    "axios": "^0.26.1",
     "express": "^4.17.1",
-    "jimp": "^0.16.1",
+    "jimp": "^0.16.2",
     "lodash": "^4.17.15",
     "node-fetch": "^2.6.6",
     "rimraf": "^3.0.2"
