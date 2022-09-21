@@ -51,4 +51,4 @@ Add your own domain name and have it point to the running services (try adding a
 
 URL: http://fpt-trungnt95-project-02-dev.us-east-1.elasticbeanstalk.com/
 
-URL for test: http://fpt-trungnt95-project-02-dev.us-east-1.elasticbeanstalk.com/filteredimage?image_url=https://upload.wikimedia.org/wikipedia/commons/b/bd/Golden_tabby_and_white_kitten_n01.jpg
+URL for test: http://fpt-trungnt95-project-02-dev.us-west-2.elasticbeanstalk.com/filteredimage?image_url=https://upload.wikimedia.org/wikipedia/commons/b/bd/Golden_tabby_and_white_kitten_n01.jpg
