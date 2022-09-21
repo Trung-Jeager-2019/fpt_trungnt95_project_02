@@ -48,4 +48,4 @@ Add your own domain name and have it point to the running services (try adding a
 > !NOTE: Domain names are not included in AWS’ free tier and will incur a cost.
 
 ### endpoint URL
-URL: http://fpt-trungnt95-project-02-dev.us-east-1.elasticbeanstalk.com/
+URL: http://fpt-trungnt95-project-02-dev.us-west-2.elasticbeanstalk.com/
